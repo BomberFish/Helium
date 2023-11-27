@@ -863,7 +863,12 @@ static inline CGRect orientationBounds(UIInterfaceOrientation orientation, CGRec
     _leftLabel.textColor = [UIColor whiteColor];
     _leftLabel.font = [UIFont systemFontOfSize: FONT_SIZE];
     _leftLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [_contentView addSubview:_leftLabel];
+    _LblurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    _LblurView.layer.cornerRadius = 6;
+    _LblurView.layer.masksToBounds = YES;
+    _LblurView.translatesAutoresizingMaskIntoConstraints = NO;
+    [_contentView addSubview:_LblurView];
+    [_LblurView addSubview:_leftLabel];
     
     // MARK: Center Widget
     _centerLabel = [[UILabel alloc] initWithFrame: CGRectZero];
@@ -872,7 +877,12 @@ static inline CGRect orientationBounds(UIInterfaceOrientation orientation, CGRec
     _centerLabel.textColor = [UIColor whiteColor];
     _centerLabel.font = [UIFont systemFontOfSize: FONT_SIZE];
     _centerLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [_contentView addSubview:_centerLabel];
+    _CblurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    _CblurView.layer.cornerRadius = 6;
+    _CblurView.layer.masksToBounds = YES;
+    _CblurView.translatesAutoresizingMaskIntoConstraints = NO;
+    [_contentView addSubview:_CblurView];
+    [_CblurView addSubview:_leftLabel];
     
     // MARK: Right Widget
     _rightLabel = [[UILabel alloc] initWithFrame: CGRectZero];
@@ -881,7 +891,12 @@ static inline CGRect orientationBounds(UIInterfaceOrientation orientation, CGRec
     _rightLabel.textColor = [UIColor whiteColor];
     _rightLabel.font = [UIFont systemFontOfSize: FONT_SIZE];
     _rightLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [_contentView addSubview:_rightLabel];
+    _RblurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    _RblurView.layer.cornerRadius = 6;
+    _RblurView.layer.masksToBounds = YES;
+    _RblurView.translatesAutoresizingMaskIntoConstraints = NO;
+    [_contentView addSubview:_RblurView];
+    [_RblurView addSubview:_leftLabel];
 
     if (DEBUG_MODE_ENABLED == 1) {
         // enable the background color to see the sizes
